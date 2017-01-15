@@ -1,0 +1,30 @@
+@model Packt.CS7.HomeIndexViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+  <div class="col-md-12">
+    <h1>Northwind</h1>
+    <p class="lead">We have had @Model.VisitorCount visitors this month.</p>
+    <h2>Products</h2>
+    <div id="newspaper">
+      <ul>
+      @foreach (var item in @Model.Products)
+      {
+        <li><a asp-controller="Home" 
+               asp-action="ProductDetail" 
+               asp-route-id="@item.ProductID">
+            @item.ProductName costs 
+            @item.UnitPrice.Value.ToString("C")
+        </a></li>
+      }
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <form asp-action="ProductsThatCostMoreThan" method="get">
+    <input name="price" placeholder="Enter a product price" />
+    <input type="submit" />
+  </form>
+</div>

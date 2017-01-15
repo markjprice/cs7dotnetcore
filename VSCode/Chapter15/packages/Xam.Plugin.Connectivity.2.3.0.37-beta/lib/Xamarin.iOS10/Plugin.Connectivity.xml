@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.Connectivity</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.Connectivity.CrossConnectivity">
+            <summary>
+            Cross platform Connectivity implementations
+            </summary>
+        </member>
+        <member name="P:Plugin.Connectivity.CrossConnectivity.Current">
+            <summary>
+            Current settings to use
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.CrossConnectivity.Dispose">
+            <summary>
+            Dispose of everything 
+            </summary>
+        </member>
+        <member name="T:Plugin.Connectivity.ConnectivityImplementation">
+            <summary>
+            Implementation for Connectivity
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityImplementation.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Plugin.Connectivity.ConnectivityImplementation.IsConnected">
+            <summary>
+            Gets if there is an active internet connection
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityImplementation.IsReachable(System.String,System.Int32)">
+            <summary>
+            Tests if a host name is pingable
+            </summary>
+            <param name="host">The host name can either be a machine name, such as "java.sun.com", or a textual representation of its IP address (127.0.0.1)</param>
+            <param name="msTimeout">Timeout in milliseconds</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityImplementation.IsRemoteReachable(System.String,System.Int32,System.Int32)">
+            <summary>
+            Tests if a remote host name is reachable 
+            </summary>
+            <param name="host">Host name can be a remote IP or URL of website</param>
+            <param name="port">Port to attempt to check is reachable.</param>
+            <param name="msTimeout">Timeout in milliseconds.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Plugin.Connectivity.ConnectivityImplementation.ConnectionTypes">
+            <summary>
+            Gets the list of all active connection types.
+            </summary>
+        </member>
+        <member name="P:Plugin.Connectivity.ConnectivityImplementation.Bandwidths">
+            <summary>
+            Not supported on iOS
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityImplementation.Dispose(System.Boolean)">
+            <summary>
+            Dispose
+            </summary>
+            <param name="disposing"></param>
+        </member>
+        <member name="T:Plugin.Connectivity.NetworkStatus">
+            <summary>
+            Status of newtowkr enum
+            </summary>
+        </member>
+        <member name="F:Plugin.Connectivity.NetworkStatus.NotReachable">
+            <summary>
+            No internet connection
+            </summary>
+        </member>
+        <member name="F:Plugin.Connectivity.NetworkStatus.ReachableViaCarrierDataNetwork">
+            <summary>
+            Reachable view Cellular.
+            </summary>
+        </member>
+        <member name="F:Plugin.Connectivity.NetworkStatus.ReachableViaWiFiNetwork">
+            <summary>
+            Reachable view wifi
+            </summary>
+        </member>
+        <member name="T:Plugin.Connectivity.Reachability">
+            <summary>
+            Reachability helper
+            </summary>
+        </member>
+        <member name="F:Plugin.Connectivity.Reachability.HostName">
+            <summary>
+            Default host name to use
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.Reachability.IsReachableWithoutRequiringConnection(SystemConfiguration.NetworkReachabilityFlags)">
+            <summary>
+            Checks if reachable without requireing a connection
+            </summary>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Connectivity.Reachability.IsHostReachable(System.String,System.Int32)">
+            <summary>
+            Checks if host is reachable
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Connectivity.Reachability.IsHostReachable(System.String)">
+            <summary>
+             Is the host reachable with the current network configuration
+            </summary>
+            <param name="host"></param>
+            <returns></returns>
+        </member>
+        <member name="E:Plugin.Connectivity.Reachability.ReachabilityChanged">
+            <summary>
+            Raised every time there is an interesting reachable event,
+            we do not even pass the info as to what changed, and
+            we lump all three status we probe into one
+            </summary>
+        </member>
+        <member name="F:Plugin.Connectivity.Reachability.defaultRouteReachability">
+            <summary>
+            Checks ad hoc wifi is available
+            </summary>
+            <param name="flags"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Connectivity.Reachability.RemoteHostStatus">
+            <summary>
+            Checks the remote host status
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Connectivity.Reachability.InternetConnectionStatus">
+            <summary>
+            Checks internet connection status
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Connectivity.Reachability.Dispose">
+            <summary>
+            Dispose
+            </summary>
+        </member>
+    </members>
+</doc>

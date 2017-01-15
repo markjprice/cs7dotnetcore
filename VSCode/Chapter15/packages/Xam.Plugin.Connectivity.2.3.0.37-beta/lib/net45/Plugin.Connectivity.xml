@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.Connectivity</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.Connectivity.CrossConnectivity">
+            <summary>
+            Cross platform Connectivity implementations
+            </summary>
+        </member>
+        <member name="P:Plugin.Connectivity.CrossConnectivity.Current">
+            <summary>
+            Current settings to use
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.CrossConnectivity.Dispose">
+            <summary>
+            Dispose of everything 
+            </summary>
+        </member>
+        <member name="T:Plugin.Connectivity.ConnectivityImplementation">
+            <summary>
+            Connectivity Implementation
+            </summary>
+        </member>
+        <member name="P:Plugin.Connectivity.ConnectivityImplementation.Bandwidths">
+            <summary>
+            Bandwidths
+            </summary>
+        </member>
+        <member name="P:Plugin.Connectivity.ConnectivityImplementation.ConnectionTypes">
+            <summary>
+            Connection types
+            </summary>
+        </member>
+        <member name="P:Plugin.Connectivity.ConnectivityImplementation.IsConnected">
+            <summary>
+            Is Connected
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityImplementation.IsReachable(System.String,System.Int32)">
+            <summary>
+            Is Reachable
+            </summary>
+            <param name="host"></param>
+            <param name="msTimeout"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityImplementation.IsRemoteReachable(System.String,System.Int32,System.Int32)">
+            <summary>
+            IsReachable
+            </summary>
+            <param name="host"></param>
+            <param name="port"></param>
+            <param name="msTimeout"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

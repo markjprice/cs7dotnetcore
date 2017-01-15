@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Plugin.Connectivity</name>
+    </assembly>
+    <members>
+        <member name="T:Plugin.Connectivity.CrossConnectivity">
+            <summary>
+            Cross platform Connectivity implementations
+            </summary>
+        </member>
+        <member name="P:Plugin.Connectivity.CrossConnectivity.Current">
+            <summary>
+            Current settings to use
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.CrossConnectivity.Dispose">
+            <summary>
+            Dispose of everything 
+            </summary>
+        </member>
+        <member name="T:Plugin.Connectivity.ConnectivityChangeBroadcastReceiver">
+            <summary>
+            Broadcast receiver to get notifications from Android on connectivity change
+            </summary>
+        </member>
+        <member name="F:Plugin.Connectivity.ConnectivityChangeBroadcastReceiver.ConnectionChanged">
+            <summary>
+            Action to call when connetivity changes
+            </summary>
+        </member>
+        <member name="F:Plugin.Connectivity.ConnectivityChangeBroadcastReceiver.ConnectionTypeChanged">
+            <summary>
+            Action to call when connetivity type changes
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityChangeBroadcastReceiver.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Plugin.Connectivity.ConnectivityChangeBroadcastReceiver.IsConnected">
+            <summary>
+            Gets if there is an active internet connection
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityChangeBroadcastReceiver.OnReceive(Android.Content.Context,Android.Content.Intent)">
+            <summary>
+            Received a notification via BR.
+            </summary>
+            <param name="context"></param>
+            <param name="intent"></param>
+        </member>
+        <member name="T:Plugin.Connectivity.ConnectivityImplementation">
+            <summary>
+            Implementation for Feature
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityImplementation.#ctor">
+            <summary>
+            Default constructor
+            </summary>
+        </member>
+        <member name="P:Plugin.Connectivity.ConnectivityImplementation.IsConnected">
+            <summary>
+            Gets if there is an active internet connection
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityImplementation.IsReachable(System.String,System.Int32)">
+            <summary>
+            Tests if a host name is pingable
+            </summary>
+            <param name="host">The host name can either be a machine name, such as "java.sun.com", or a textual representation of its IP address (127.0.0.1)</param>
+            <param name="msTimeout">Timeout in milliseconds</param>
+            <returns></returns>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityImplementation.IsRemoteReachable(System.String,System.Int32,System.Int32)">
+            <summary> 
+            Tests if a remote host name is reachable 
+            </summary>
+            <param name="host">Host name can be a remote IP or URL of website</param>
+            <param name="port">Port to attempt to check is reachable.</param>
+            <param name="msTimeout">Timeout in milliseconds.</param>
+            <returns></returns>
+        </member>
+        <member name="P:Plugin.Connectivity.ConnectivityImplementation.ConnectionTypes">
+            <summary>
+            Gets the list of all active connection types.
+            </summary>
+        </member>
+        <member name="P:Plugin.Connectivity.ConnectivityImplementation.Bandwidths">
+            <summary>
+            Retrieves a list of available bandwidths for the platform.
+            Only active connections.
+            </summary>
+        </member>
+        <member name="M:Plugin.Connectivity.ConnectivityImplementation.Dispose(System.Boolean)">
+            <summary>
+            Dispose
+            </summary>
+            <param name="disposing"></param>
+        </member>
+    </members>
+</doc>
