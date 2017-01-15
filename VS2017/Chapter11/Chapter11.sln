@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.25920.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch11_EncryptionApp", "Ch11_EncryptionApp\Ch11_EncryptionApp.csproj", "{82511DF2-2845-4969-9E8C-99E1868983DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch11_CryptographyLib", "Ch11_CryptographyLib\Ch11_CryptographyLib.csproj", "{6EC851CB-7D7E-4242-91D6-3D3CE36480A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch11_HashingApp", "Ch11_HashingApp\Ch11_HashingApp.csproj", "{4F393AFB-1487-4ABC-A723-EBEAB2EA46E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ch11_SigningApp", "Ch11_SigningApp\Ch11_SigningApp.csproj", "{60F245AF-264B-492A-9955-EEC8867620C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82511DF2-2845-4969-9E8C-99E1868983DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82511DF2-2845-4969-9E8C-99E1868983DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82511DF2-2845-4969-9E8C-99E1868983DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82511DF2-2845-4969-9E8C-99E1868983DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6EC851CB-7D7E-4242-91D6-3D3CE36480A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6EC851CB-7D7E-4242-91D6-3D3CE36480A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6EC851CB-7D7E-4242-91D6-3D3CE36480A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6EC851CB-7D7E-4242-91D6-3D3CE36480A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F393AFB-1487-4ABC-A723-EBEAB2EA46E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F393AFB-1487-4ABC-A723-EBEAB2EA46E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F393AFB-1487-4ABC-A723-EBEAB2EA46E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F393AFB-1487-4ABC-A723-EBEAB2EA46E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60F245AF-264B-492A-9955-EEC8867620C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60F245AF-264B-492A-9955-EEC8867620C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60F245AF-264B-492A-9955-EEC8867620C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60F245AF-264B-492A-9955-EEC8867620C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

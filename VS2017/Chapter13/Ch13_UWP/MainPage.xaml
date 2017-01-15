@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="Ch13_UWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Ch13_UWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{StaticResource rainbow}">
+        <StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Button Margin="6" Padding="6" Name="clickMeButton" Click="clickMeButton_Click">
+                    Click Me
+                </Button>
+                <Slider Value="50" Maximum="100" Minimum="0" Width="200" Name="slider"/>
+                <TextBlock Text="{Binding ElementName=slider, Path=Value}" VerticalAlignment="Center" Margin="10"/>
+            </StackPanel>
+            <TextBlock>Use the slider below to rotate the square:</TextBlock>
+            <Slider Value="0" Minimum="0" Maximum="360" Name="sliderRotation"/>
+            <Rectangle Height="100" Width="100" Fill="Red">
+                <Rectangle.RenderTransform>
+                    <RotateTransform Angle="{Binding ElementName=sliderRotation, Path=Value}" />
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </StackPanel>
+    </Grid>
+</Page>
