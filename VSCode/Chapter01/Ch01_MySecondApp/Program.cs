@@ -1,12 +1,12 @@
 ﻿using System;
 
-namespace ConsoleApplication
+namespace Ch01_MySecondApp
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Console.WriteLine("Hello Mac!");
+            Console.WriteLine("Welcome, .NET Core!");
         }
     }
 }
