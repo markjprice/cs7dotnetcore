@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApplication.Models.AccountViewModels
+namespace Ch14_WebApp.Models.AccountViewModels
 {
     public class ExternalLoginConfirmationViewModel
     {

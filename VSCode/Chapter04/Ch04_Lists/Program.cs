@@ -1,12 +1,12 @@
 ﻿using System;
-using static System.Console;
 using System.Collections.Generic;
+using static System.Console;
 
-namespace ConsoleApplication
+namespace Ch04_Lists
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             var cities = new List<string>();
             cities.Add("London");
@@ -17,7 +17,7 @@ namespace ConsoleApplication
             {
                 WriteLine($"  {city}");
             }
-            WriteLine($"The first city is {cities[0]}."); 
+            WriteLine($"The first city is {cities[0]}.");
             WriteLine($"The last city is {cities[cities.Count - 1]}.");
             cities.Insert(0, "Sydney");
             WriteLine("After inserting Sydney at index 0");

@@ -3,11 +3,12 @@ using System.Collections.Generic; // for IEnumerable<T>
 using System.Linq; // for LINQ extension methods
 using static System.Console;
 
-namespace ConsoleApplication
+namespace Ch09_Sets
 {
-    public class Program
+    class Program
     {
-        private static void Output(IEnumerable<string> cohort, string description = "")
+        private static void Output(
+            IEnumerable<string> cohort, string description = "")
         {
             if (!string.IsNullOrEmpty(description))
             {
@@ -16,21 +17,21 @@ namespace ConsoleApplication
             Write("  ");
             WriteLine(string.Join(", ", cohort.ToArray()));
         }
-    
-        public static void Main(string[] args)
+
+        static void Main(string[] args)
         {
-            var cohort1 = new string[] 
-                { "Rachel", "Gareth", "Jonathan", "George" };
-            var cohort2 = new string[] 
-                { "Jack", "Stephen", "Daniel", "Jack", "Jared" };
-            var cohort3 = new string[] 
-                { "Declan", "Jack", "Jack", "Jasmine", "Conor" };
+            var cohort1 = new string[]
+              { "Rachel", "Gareth", "Jonathan", "George" };
+            var cohort2 = new string[]
+              { "Jack", "Stephen", "Daniel", "Jack", "Jared" };
+            var cohort3 = new string[]
+              { "Declan", "Jack", "Jack", "Jasmine", "Conor" };
 
             Output(cohort1, "Cohort 1");
             Output(cohort2, "Cohort 2");
             Output(cohort3, "Cohort 3");
             WriteLine();
-            
+
             Output(cohort2.Distinct(), "cohort2.Distinct(): removes duplicates");
             Output(cohort2.Union(cohort3), "cohort2.Union(cohort3): combines two sequences and removes any duplicates");
             Output(cohort2.Concat(cohort3), "cohort2.Concat(cohort3): combines two sequences but leaves in any duplicates");

@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/project.json"
+                "${workspaceRoot}/Ch08_EFCore.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

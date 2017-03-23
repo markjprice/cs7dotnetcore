@@ -7,7 +7,7 @@
 	<key>CFBundleName</key>
 	<string>Ch15_MobileApp</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.ch15_mobileapp</string>
+	<string>com.packt.ch15_mobileapp</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

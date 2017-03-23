@@ -1,14 +1,16 @@
-﻿using static System.Console;
+﻿using System;
+using static System.Console;
 
-namespace ConsoleApplication
+namespace Ch05_Debugging
 {
-    public class Program
+    class Program
     {
         static double Add(double a, double b)
         {
             return a + b; // deliberate bug!
         }
-        public static void Main(string[] args)
+
+        static void Main(string[] args)
         {
             double a = 4.5; // or use var
             double b = 2.5;

@@ -2,27 +2,34 @@
 using Packt.CS7;
 using static System.Console;
 
-namespace ConsoleApplication
+namespace Ch06_PeopleApp
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             var p1 = new Person();
             p1.Name = "Bob Smith";
             p1.DateOfBirth = new DateTime(1965, 12, 22);
             WriteLine($"{p1.Name} was born on {p1.DateOfBirth:dddd, d MMMM yyyy}");
+
+            var p2 = new Person
+            {
+                Name = "Alice Jones",
+                DateOfBirth = new DateTime(1998, 3, 17)
+            };
+            WriteLine($"{p2.Name} was born on {p2.DateOfBirth:d MMM yy}");
+
             p1.FavouriteAncientWonder = WondersOfTheAncientWorld.StatueOfZeusAtOlympia;
             WriteLine($"{p1.Name}'s favourite wonder is {p1.FavouriteAncientWonder}");
+
             p1.BucketList = WondersOfTheAncientWorld.HangingGardensOfBabylon | WondersOfTheAncientWorld.MausoleumAtHalicarnassus;
             // p1.BucketList = (WondersOfTheAncientWorld)18;
             WriteLine($"{p1.Name}'s bucket list is {p1.BucketList}");
+
             p1.Children.Add(new Person());
             p1.Children.Add(new Person());
             WriteLine($"{p1.Name} has {p1.Children.Count} children.");
-
-            var p2 = new Person { Name = "Alice Jones", DateOfBirth = new DateTime(1998, 3, 17) };
-            WriteLine($"{p2.Name} was born on {p2.DateOfBirth:d MMM yy}");
 
             BankAccount.InterestRate = 0.012M;
             var ba1 = new BankAccount();
@@ -35,6 +42,7 @@ namespace ConsoleApplication
             WriteLine($"{ba2.AccountName} earned {ba2.Balance * BankAccount.InterestRate:C} interest.");
 
             WriteLine($"{p1.Name} is a {Person.Species}");
+
             WriteLine($"{p1.Name} was born on {p1.HomePlanet}");
 
             var p3 = new Person();
@@ -46,19 +54,20 @@ namespace ConsoleApplication
             p1.WriteToConsole();
             WriteLine(p1.GetOrigin());
 
-            WriteLine(p1.SayHello());
-            WriteLine(p1.SayHello("Emily"));
-
-            Tuple<string, int> fruit4 = p1.GetFruit4();
+            Tuple<string, int> fruit4 = p1.GetFruitCS4();
             WriteLine($"There are {fruit4.Item2} {fruit4.Item1}.");
 
-            // the new C# 7 syntax and new System.ValueTuple type
-            // (string, int) fruit7 = p1.GetFruit7();
-            // WriteLine($"There are {fruit7.Item2} {fruit7.Item1}.");
+            (string, int) fruit7 = p1.GetFruitCS7();
+            WriteLine($"{fruit7.Item1}, {fruit7.Item2} there are.");
 
-            //(string Name, int Number) fruitNamed7 = p1.GetNamedFruit7();
-            //WriteLine($"Are there {fruit7.Number} {fruit7.Name}?");
-            
+            var fruitNamed = p1.GetNamedFruit();
+            WriteLine($"Are there {fruitNamed.Number} {fruitNamed.Name}?");
+
+            (string fruitName, int fruitNumber) = p1.GetFruitCS7();
+            WriteLine($"Deconstructed: {fruitName}, {fruitNumber}");
+
+            WriteLine(p1.SayHello());
+            WriteLine(p1.SayHello("Emily"));
 
             p1.OptionalParameters();
             p1.OptionalParameters("Jump!", 98.5);
@@ -76,10 +85,14 @@ namespace ConsoleApplication
             int d = 10;
             int e = 20;
             WriteLine($"Before: d = {d}, e = {e}, f doesn't exist yet!");
-            // p1.PassingParameters(d, ref e, out int f);
-            // WriteLine($"After: d = {d}, e = {e}, f = {f}");
+            p1.PassingParameters(d, ref e, out int f);
+            WriteLine($"After: d = {d}, e = {e}, f = {f}");
 
-            var max = new Person { Name = "Max", DateOfBirth = new DateTime(1972, 1, 27) };
+            var max = new Person
+            {
+                Name = "Max",
+                DateOfBirth = new DateTime(1972, 1, 27)
+            };
             WriteLine(max.Origin);
             WriteLine(max.Greeting);
             WriteLine(max.Age);

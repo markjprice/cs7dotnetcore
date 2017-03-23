@@ -1,0 +1,8 @@
+/Users/markjprice/Code/Chapter10/Ch10_FileSystem/bin/Debug/netcoreapp1.1/Ch10_FileSystem.deps.json
+/Users/markjprice/Code/Chapter10/Ch10_FileSystem/bin/Debug/netcoreapp1.1/Ch10_FileSystem.runtimeconfig.json
+/Users/markjprice/Code/Chapter10/Ch10_FileSystem/bin/Debug/netcoreapp1.1/Ch10_FileSystem.runtimeconfig.dev.json
+/Users/markjprice/Code/Chapter10/Ch10_FileSystem/bin/Debug/netcoreapp1.1/Ch10_FileSystem.dll
+/Users/markjprice/Code/Chapter10/Ch10_FileSystem/bin/Debug/netcoreapp1.1/Ch10_FileSystem.pdb
+/Users/markjprice/Code/Chapter10/Ch10_FileSystem/obj/Debug/netcoreapp1.1/Ch10_FileSystem.AssemblyInfo.cs
+/Users/markjprice/Code/Chapter10/Ch10_FileSystem/obj/Debug/netcoreapp1.1/Ch10_FileSystem.dll
+/Users/markjprice/Code/Chapter10/Ch10_FileSystem/obj/Debug/netcoreapp1.1/Ch10_FileSystem.pdb

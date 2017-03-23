@@ -1,12 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using static System.Console;
 
-namespace ConsoleApplication
+namespace Ch04_Dictionaries
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
+            
             var keywords = new Dictionary<string, string>();
             keywords.Add("int", "32-bit integer data type");
             keywords.Add("long", "64-bit integer data type");
@@ -17,7 +20,6 @@ namespace ConsoleApplication
                 WriteLine($"  {item.Key}: {item.Value}");
             }
             WriteLine($"The definition of long is {keywords["long"]}");
-            
         }
     }
 }

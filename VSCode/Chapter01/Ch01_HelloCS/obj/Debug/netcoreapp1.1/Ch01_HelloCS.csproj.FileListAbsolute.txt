@@ -1,0 +1,8 @@
+/Users/markjprice/Code/Chapter01/Ch01_HelloCS/bin/Debug/netcoreapp1.1/Ch01_HelloCS.deps.json
+/Users/markjprice/Code/Chapter01/Ch01_HelloCS/bin/Debug/netcoreapp1.1/Ch01_HelloCS.runtimeconfig.json
+/Users/markjprice/Code/Chapter01/Ch01_HelloCS/bin/Debug/netcoreapp1.1/Ch01_HelloCS.runtimeconfig.dev.json
+/Users/markjprice/Code/Chapter01/Ch01_HelloCS/bin/Debug/netcoreapp1.1/Ch01_HelloCS.dll
+/Users/markjprice/Code/Chapter01/Ch01_HelloCS/bin/Debug/netcoreapp1.1/Ch01_HelloCS.pdb
+/Users/markjprice/Code/Chapter01/Ch01_HelloCS/obj/Debug/netcoreapp1.1/Ch01_HelloCS.AssemblyInfo.cs
+/Users/markjprice/Code/Chapter01/Ch01_HelloCS/obj/Debug/netcoreapp1.1/Ch01_HelloCS.dll
+/Users/markjprice/Code/Chapter01/Ch01_HelloCS/obj/Debug/netcoreapp1.1/Ch01_HelloCS.pdb

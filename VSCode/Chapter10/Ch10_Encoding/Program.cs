@@ -1,12 +1,12 @@
 ﻿using System;
-using System.Text;
 using static System.Console;
+using System.Text;
 
-namespace ConsoleApplication
+namespace Ch10_Encoding
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             WriteLine("Encodings");
             WriteLine("[1] ASCII");

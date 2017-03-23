@@ -2,11 +2,11 @@
 using Packt.CS7;
 using static System.Console;
 
-namespace ConsoleApplication
+namespace Ch11_EncryptionApp
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             Write("Enter a message that you want to encrypt: ");
             string message = ReadLine();
@@ -23,7 +23,8 @@ namespace ConsoleApplication
             }
             catch
             {
-                WriteLine("Enable to decrypt because you entered the wrong password!");
+                WriteLine(
+                  "Enable to decrypt because you entered the wrong password!");
             }
         }
     }

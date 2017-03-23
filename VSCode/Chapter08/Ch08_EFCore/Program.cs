@@ -1,21 +1,23 @@
-﻿using static System.Console;
-using Microsoft.EntityFrameworkCore;
-using System.Linq;
+﻿using System;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using System;
+using static System.Console;
+using Packt.CS7;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Packt.CS7
+namespace Ch08_EFCore
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            using(var db = new Northwind())
+            using (var db = new Northwind())
             {
-                using(IDbContextTransaction t = db.Database.BeginTransaction())
+                using (IDbContextTransaction t =
+  db.Database.BeginTransaction())
                 {
                     WriteLine($"Transaction started with this isolation level: {t.GetDbTransaction().IsolationLevel}");
 
@@ -25,6 +27,7 @@ namespace Packt.CS7
                     WriteLine("List of categories and the number of products:");
 
                     IQueryable<Category> cats;
+                    // = db.Categories.Include(c => c.Products);
 
                     Write("Enable eager loading? (Y/N): ");
                     bool eagerloading = (ReadKey().Key == ConsoleKey.Y);
@@ -40,9 +43,10 @@ namespace Packt.CS7
                         Write("Enable explicit loading? (Y/N): ");
                         explicitloading = (ReadKey().Key == ConsoleKey.Y);
                         WriteLine();
-                    }       
+                    }
 
-                    foreach(Category c in cats)
+
+                    foreach (Category c in cats)
                     {
                         if (explicitloading)
                         {
@@ -54,7 +58,9 @@ namespace Packt.CS7
                             }
                             WriteLine();
                         }
-                        WriteLine($"{c.CategoryName} has {c.Products.Count} products.");
+
+                        WriteLine(
+                          $"{c.CategoryName} has {c.Products.Count} products.");
                     }
 
                     WriteLine("List of products that cost more than a given price with most expensive first.");
@@ -66,11 +72,11 @@ namespace Packt.CS7
                         input = ReadLine();
                     } while (!decimal.TryParse(input, out price));
 
-                    IQueryable<Product> query = db.Products
+                    IQueryable<Product> prods = db.Products
                         .Where(product => product.UnitPrice > price)
                         .OrderByDescending(product => product.UnitPrice);
 
-                    foreach (Product item in query) 
+                    foreach (Product item in prods)
                     {
                         WriteLine($"{item.ProductID}: {item.ProductName} costs {item.UnitPrice:$#,##0.00}");
                     }
@@ -83,28 +89,27 @@ namespace Packt.CS7
                     };
                     // mark product as added in change tracking
                     db.Products.Add(newProduct);
-                    WriteLine(newProduct.ProductID);
                     // save tracked changes to database
                     db.SaveChanges();
-                    foreach (var item in query)
+                    foreach (var item in db.Products)
                     {
                         WriteLine($"{item.ProductID}: {item.ProductName} costs {item.UnitPrice:$#,##0.00}");
                     }
 
                     Product updateProduct = db.Products.First(
-                        p => p.ProductName.StartsWith("Bob"));
+                      p => p.ProductName.StartsWith("Bob"));
                     updateProduct.UnitPrice += 20M;
                     db.SaveChanges();
-                    foreach (var item in query)
+                    foreach (var item in db.Products)
                     {
                         WriteLine($"{item.ProductID}: {item.ProductName} costs {item.UnitPrice:$#,##0.00}");
                     }
 
                     Product deleteProduct = db.Products.First(
-                        p => p.ProductName.StartsWith("Bob"));
+                      p => p.ProductName.StartsWith("Bob"));
                     db.Products.Remove(deleteProduct);
                     db.SaveChanges();
-                    foreach (var item in query)
+                    foreach (var item in db.Products)
                     {
                         WriteLine($"{item.ProductID}: {item.ProductName} costs {item.UnitPrice:$#,##0.00}");
                     }

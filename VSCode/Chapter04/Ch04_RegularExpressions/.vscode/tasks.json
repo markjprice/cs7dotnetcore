@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/project.json"
+                "${workspaceRoot}/Ch04_RegularExpressions.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

@@ -2,11 +2,11 @@
 using static System.Console;
 using static System.Convert;
 
-namespace ConsoleApplication
+namespace Ch03_CastingConverting
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             int a = 10;
             double b = a; // an int can be stored in a double
@@ -33,8 +33,8 @@ namespace ConsoleApplication
             double l = 10.5;
             WriteLine($"i is {i}, ToInt(i) is {ToInt32(i)}");
             WriteLine($"j is {j}, ToInt(j) is {ToInt32(j)}");
-            WriteLine($"i is {k}, ToInt(k) is {ToInt32(k)}");
-            WriteLine($"j is {l}, ToInt(l) is {ToInt32(l)}");
+            WriteLine($"k is {k}, ToInt(k) is {ToInt32(k)}");
+            WriteLine($"l is {l}, ToInt(l) is {ToInt32(l)}");
 
             int number = 12;
             WriteLine(number.ToString());
@@ -44,6 +44,24 @@ namespace ConsoleApplication
             WriteLine(now.ToString());
             object me = new object();
             WriteLine(me.ToString());
+
+            int age = int.Parse("27");
+            DateTime birthday = DateTime.Parse("4 July 1980");
+            WriteLine($"I was born {age} years ago.");
+            WriteLine($"My birthday is {birthday}.");
+            WriteLine($"My birthday is {birthday:D}.");
+
+            Write("How many eggs are there? ");
+            int count;
+            string input = Console.ReadLine();
+            if (int.TryParse(input, out count))
+            {
+                WriteLine($"There are {count} eggs.");
+            }
+            else
+            {
+                WriteLine("I could not parse the input.");
+            }
 
         }
     }

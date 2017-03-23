@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,30 +6,34 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebApplication.Models;
-using WebApplication.Models.ManageViewModels;
-using WebApplication.Services;
+using Microsoft.Extensions.Options;
+using Ch14_WebApp.Models;
+using Ch14_WebApp.Models.ManageViewModels;
+using Ch14_WebApp.Services;
 
-namespace WebApplication.Controllers
+namespace Ch14_WebApp.Controllers
 {
     [Authorize]
     public class ManageController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly string _externalCookieScheme;
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
 
         public ManageController(
-        UserManager<ApplicationUser> userManager,
-        SignInManager<ApplicationUser> signInManager,
-        IEmailSender emailSender,
-        ISmsSender smsSender,
-        ILoggerFactory loggerFactory)
+          UserManager<ApplicationUser> userManager,
+          SignInManager<ApplicationUser> signInManager,
+          IOptions<IdentityCookieOptions> identityCookieOptions,
+          IEmailSender emailSender,
+          ISmsSender smsSender,
+          ILoggerFactory loggerFactory)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _externalCookieScheme = identityCookieOptions.Value.ExternalCookieAuthenticationScheme;
             _emailSender = emailSender;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<ManageController>();
@@ -50,6 +54,10 @@ namespace WebApplication.Controllers
                 : "";
 
             var user = await GetCurrentUserAsync();
+            if (user == null)
+            {
+                return View("Error");
+            }
             var model = new IndexViewModel
             {
                 HasPassword = await _userManager.HasPasswordAsync(user),
@@ -100,6 +108,10 @@ namespace WebApplication.Controllers
             }
             // Generate the token and send it
             var user = await GetCurrentUserAsync();
+            if (user == null)
+            {
+                return View("Error");
+            }
             var code = await _userManager.GenerateChangePhoneNumberTokenAsync(user, model.PhoneNumber);
             await _smsSender.SendSmsAsync(model.PhoneNumber, "Your security code is: " + code);
             return RedirectToAction(nameof(VerifyPhoneNumber), new { PhoneNumber = model.PhoneNumber });
@@ -142,7 +154,12 @@ namespace WebApplication.Controllers
         [HttpGet]
         public async Task<IActionResult> VerifyPhoneNumber(string phoneNumber)
         {
-            var code = await _userManager.GenerateChangePhoneNumberTokenAsync(await GetCurrentUserAsync(), phoneNumber);
+            var user = await GetCurrentUserAsync();
+            if (user == null)
+            {
+                return View("Error");
+            }
+            var code = await _userManager.GenerateChangePhoneNumberTokenAsync(user, phoneNumber);
             // Send an SMS to verify the phone number
             return phoneNumber == null ? View("Error") : View(new VerifyPhoneNumberViewModel { PhoneNumber = phoneNumber });
         }
@@ -287,10 +304,13 @@ namespace WebApplication.Controllers
         // POST: /Manage/LinkLogin
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult LinkLogin(string provider)
+        public async Task<IActionResult> LinkLogin(string provider)
         {
+            // Clear the existing external cookie to ensure a clean login process
+            await HttpContext.Authentication.SignOutAsync(_externalCookieScheme);
+
             // Request a redirect to the external login provider to link a login for the current user
-            var redirectUrl = Url.Action("LinkLoginCallback", "Manage");
+            var redirectUrl = Url.Action(nameof(LinkLoginCallback), "Manage");
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl, _userManager.GetUserId(User));
             return Challenge(properties, provider);
         }
@@ -311,7 +331,13 @@ namespace WebApplication.Controllers
                 return RedirectToAction(nameof(ManageLogins), new { Message = ManageMessageId.Error });
             }
             var result = await _userManager.AddLoginAsync(user, info);
-            var message = result.Succeeded ? ManageMessageId.AddLoginSuccess : ManageMessageId.Error;
+            var message = ManageMessageId.Error;
+            if (result.Succeeded)
+            {
+                message = ManageMessageId.AddLoginSuccess;
+                // Clear the existing external cookie to ensure a clean login process
+                await HttpContext.Authentication.SignOutAsync(_externalCookieScheme);
+            }
             return RedirectToAction(nameof(ManageLogins), new { Message = message });
         }
 

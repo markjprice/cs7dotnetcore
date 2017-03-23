@@ -1,16 +1,16 @@
-﻿using static System.Console;
+﻿using System;
+using static System.Console;
 
-namespace ConsoleApplication
+namespace Ch04_ManipulatingText
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             string city = "London";
             WriteLine($"{city} is {city.Length} characters long.");
-            
             WriteLine($"First char is {city[0]} and third is {city[2]}.");
-            
+
             string cities = "Paris,Berlin,Madrid,New York";
             string[] citiesArray = cities.Split(',');
             foreach (string item in citiesArray)
@@ -31,7 +31,6 @@ namespace ConsoleApplication
 
             string recombined = string.Join(" => ", citiesArray);
             WriteLine(recombined);
-
 
         }
     }

@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/project.json"
+                "${workspaceRoot}/Ch12_NestedAndChildTasks.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

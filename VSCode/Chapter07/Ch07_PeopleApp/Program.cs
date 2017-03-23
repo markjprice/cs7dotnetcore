@@ -2,37 +2,37 @@
 using Packt.CS7;
 using static System.Console;
 
-namespace ConsoleApplication
+namespace Ch07_PeopleApp
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             var harry = new Person { Name = "Harry" };
             var mary = new Person { Name = "Mary" };
             var baby1 = harry.Procreate(mary);
             var baby2 = harry * mary;
+
             WriteLine($"{mary.Name} has {mary.Children.Count} children.");
             WriteLine($"{harry.Name} has {harry.Children.Count} children.");
-            WriteLine($"{harry.Name}'s first child is named {harry.Children[0].Name}.");
-            
+            WriteLine($"{harry.Name}'s first child is named \"{harry.Children[0].Name}\".");
+
+            WriteLine($"5! is {harry.Factorial(5)}");
+
             harry.Shout += Harry_Shout;
-
             harry.Poke();
             harry.Poke();
             harry.Poke();
             harry.Poke();
 
-            //WriteLine($"5! is {harry.Factorial(5)}");
-
-            Person[] people = 
+            Person[] people =
             {
                 new Person { Name = "Simon" },
                 new Person { Name = "Jenny" },
                 new Person { Name = "Adam" },
                 new Person { Name = "Richard" }
             };
-            
+
             WriteLine("Initial list of people:");
             foreach (var person in people)
             {
@@ -58,10 +58,10 @@ namespace ConsoleApplication
             var dv3 = dv1 + dv2;
             WriteLine($"({dv1.X}, {dv1.Y}) + ({dv2.X}, {dv2.Y}) = ({dv3.X}, {dv3.Y})");
 
-            Employee e1 = new Employee 
-            { 
-                Name = "John Jones", 
-                DateOfBirth = new DateTime(1990, 7, 28) 
+            Employee e1 = new Employee
+            {
+                Name = "John Jones",
+                DateOfBirth = new DateTime(1990, 7, 28)
             };
             e1.WriteToConsole();
 
@@ -71,7 +71,8 @@ namespace ConsoleApplication
 
             WriteLine(e1.ToString());
 
-            Employee aliceInEmployee = new Employee { Name = "Alice", EmployeeCode = "AA123" };
+            Employee aliceInEmployee = new Employee
+            { Name = "Alice", EmployeeCode = "AA123" };
             Person aliceInPerson = aliceInEmployee;
             aliceInEmployee.WriteToConsole();
             aliceInPerson.WriteToConsole();
@@ -110,7 +111,6 @@ namespace ConsoleApplication
 
             WriteLine($"{email1} is a valid e-mail address: {email1.IsValidEmail()}.");
             WriteLine($"{email2} is a valid e-mail address: {email2.IsValidEmail()}.");
-
         }
 
         private static void Harry_Shout(object sender, EventArgs e)
@@ -118,5 +118,6 @@ namespace ConsoleApplication
             Person p = (Person)sender;
             WriteLine($"{p.Name} is this angry: {p.AngerLevel}.");
         }
+
     }
 }

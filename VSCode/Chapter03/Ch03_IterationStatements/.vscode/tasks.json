@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/project.json"
+                "${workspaceRoot}/Ch03_IterationStatements.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

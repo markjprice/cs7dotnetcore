@@ -4,26 +4,26 @@ using System.Threading.Tasks;
 using System.Diagnostics;
 using static System.Console;
 
-namespace ConsoleApplication
+namespace Ch12_NestedAndChildTasks
 {
-  public class Program
-  {
-    public static void Main(string[] args)
+    class Program
     {
-      var outer = Task.Factory.StartNew(() =>
-      {
-        WriteLine("Outer task starting...");
-        var inner = Task.Factory.StartNew(() =>
+        static void Main(string[] args)
         {
-          WriteLine("Inner task starting...");
-          Thread.Sleep(2000);
-          WriteLine("Inner task finished.");
-        }, TaskCreationOptions.AttachedToParent);
-      });
-      outer.Wait();
-      WriteLine("Outer task finished.");
-      WriteLine("Press ENTER to end.");
-      ReadLine();
+            var outer = Task.Factory.StartNew(() =>
+            {
+                WriteLine("Outer task starting...");
+                var inner = Task.Factory.StartNew(() =>
+                {
+                  WriteLine("Inner task starting...");
+                  Thread.Sleep(2000);
+                  WriteLine("Inner task finished.");
+                }, TaskCreationOptions.AttachedToParent);
+            });
+            outer.Wait();
+            WriteLine("Outer task finished.");
+            WriteLine("Press ENTER to end.");
+            ReadLine();
+        }
     }
-  }
 }

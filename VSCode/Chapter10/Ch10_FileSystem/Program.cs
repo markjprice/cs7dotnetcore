@@ -1,22 +1,18 @@
 ﻿using System;
-using System.IO;
-using System.IO.Compression;
-using System.Net.Security;
-using System.Net.Sockets;
-using System.Security.Cryptography;
-using System.Xml;
 using static System.Console;
+using System.IO;
 using static System.IO.Directory;
 
-namespace ConsoleApplication
+namespace Ch10_FileSystem
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            // define a directory
-            // string dir = @"C:\Code\Ch10_Example\";
-            string dir = @"/Users/markjprice/Code/Ch10_Example/";
+            // define a directory path
+            // string dir = @"C:\Code\Ch10_Example\"; // Windows
+            string dir = @"/Users/markjprice/Code/Ch10_Example/"; // macOS
+
             // check if it exists
             WriteLine($"Does {dir} exist? {Exists(dir)}");
             // create a directory
@@ -36,7 +32,7 @@ namespace ConsoleApplication
 
             // create a new text file and write a line to it
             StreamWriter textWriter = File.CreateText(textFile);
-            textWriter.WriteLine("Hello C#!");
+            textWriter.WriteLine("Hello, C#!");
             textWriter.Dispose();
             WriteLine($"Does {textFile} exist? {File.Exists(textFile)}");
 
@@ -53,14 +49,15 @@ namespace ConsoleApplication
             WriteLine(textReader.ReadToEnd());
             textReader.Dispose();
 
+            string backup = @"/Users/markjprice/Code/Ch10.bak"; // macOS
+            // string backup = @"C:\Code\Ch10.bak"; // Windows
+
             WriteLine($"File Name: {Path.GetFileName(textFile)}");
             WriteLine($"File Name without Extension: {Path.GetFileNameWithoutExtension(textFile)}");
             WriteLine($"File Extension: {Path.GetExtension(textFile)}");
             WriteLine($"Random File Name: {Path.GetRandomFileName()}");
             WriteLine($"Temporary File Name: {Path.GetTempFileName()}");
 
-            string backup = @"/Users/markjprice/Code/Ch10.bak"; // macOS
-            // string backup = @"C:\Code\Ch10.bak"; // Windows
             var info = new FileInfo(backup);
             WriteLine($"{backup} contains {info.Length} bytes.");
             WriteLine($"{backup} was last accessed {info.LastAccessTime}.");

@@ -1,12 +1,12 @@
 ﻿using System;
-using static System.Console;
 using System.Linq;
+using static System.Console;
 
-namespace ConsoleApplication
+namespace Ch09_LinqToObjects
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             var names = new string[] { "Michael", "Pam", "Jim", "Dwight", "Angela", "Kevin", "Toby", "Creed" };
             
@@ -15,6 +15,7 @@ namespace ConsoleApplication
                 .Where(name => name.Length > 4)
                 .OrderBy(name => name.Length)
                 .ThenBy(name => name);
+
             
             foreach (var item in query)
             {
@@ -26,5 +27,6 @@ namespace ConsoleApplication
         {
             return name.Length > 4;
         }
+
     }
 }

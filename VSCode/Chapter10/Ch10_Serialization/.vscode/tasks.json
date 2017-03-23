@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/project.json"
+                "${workspaceRoot}/Ch10_Serialization.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

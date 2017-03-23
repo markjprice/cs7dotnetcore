@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/project.json"
+                "${workspaceRoot}/Ch09_PLINQ.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

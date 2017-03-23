@@ -2,13 +2,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Packt.CS7
 {
-    public class Category
-    {
-        public int CategoryID { get; set; }
-        [Required]
-        [StringLength(15)]
-        [Display(Name = "Category Name")]
-        public string CategoryName { get; set; }
-        public string Description { get; set; }
-    }
+  public class Category
+  {
+    public int CategoryID { get; set; }
+    [Required]
+    [StringLength(15)]
+[Display(Name = "Category Name")]
+    public string CategoryName { get; set; }
+    public string Description { get; set; }
+  }
 }

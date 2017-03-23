@@ -1,0 +1,8 @@
+/Users/markjprice/Code/Chapter10/Ch10_Serialization/bin/Debug/netcoreapp1.1/Ch10_Serialization.deps.json
+/Users/markjprice/Code/Chapter10/Ch10_Serialization/bin/Debug/netcoreapp1.1/Ch10_Serialization.runtimeconfig.json
+/Users/markjprice/Code/Chapter10/Ch10_Serialization/bin/Debug/netcoreapp1.1/Ch10_Serialization.runtimeconfig.dev.json
+/Users/markjprice/Code/Chapter10/Ch10_Serialization/bin/Debug/netcoreapp1.1/Ch10_Serialization.dll
+/Users/markjprice/Code/Chapter10/Ch10_Serialization/bin/Debug/netcoreapp1.1/Ch10_Serialization.pdb
+/Users/markjprice/Code/Chapter10/Ch10_Serialization/obj/Debug/netcoreapp1.1/Ch10_Serialization.AssemblyInfo.cs
+/Users/markjprice/Code/Chapter10/Ch10_Serialization/obj/Debug/netcoreapp1.1/Ch10_Serialization.dll
+/Users/markjprice/Code/Chapter10/Ch10_Serialization/obj/Debug/netcoreapp1.1/Ch10_Serialization.pdb

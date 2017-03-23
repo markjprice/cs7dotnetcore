@@ -1,0 +1,8 @@
+/Users/markjprice/Code/Chapter15/Ch15_WebApi/bin/Debug/netcoreapp1.1/Ch15_WebApi.deps.json
+/Users/markjprice/Code/Chapter15/Ch15_WebApi/bin/Debug/netcoreapp1.1/Ch15_WebApi.runtimeconfig.json
+/Users/markjprice/Code/Chapter15/Ch15_WebApi/bin/Debug/netcoreapp1.1/Ch15_WebApi.runtimeconfig.dev.json
+/Users/markjprice/Code/Chapter15/Ch15_WebApi/bin/Debug/netcoreapp1.1/Ch15_WebApi.dll
+/Users/markjprice/Code/Chapter15/Ch15_WebApi/bin/Debug/netcoreapp1.1/Ch15_WebApi.pdb
+/Users/markjprice/Code/Chapter15/Ch15_WebApi/obj/Debug/netcoreapp1.1/Ch15_WebApi.AssemblyInfo.cs
+/Users/markjprice/Code/Chapter15/Ch15_WebApi/obj/Debug/netcoreapp1.1/Ch15_WebApi.dll
+/Users/markjprice/Code/Chapter15/Ch15_WebApi/obj/Debug/netcoreapp1.1/Ch15_WebApi.pdb

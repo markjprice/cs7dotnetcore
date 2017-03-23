@@ -1,18 +1,17 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using static System.Console;
-using System.Collections;
 
-namespace ConsoleApplication
+namespace Ch04_RegularExpressions
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            
             Write("Enter your age: ");
             string input = ReadLine();
-            Regex ageChecker = new Regex(@"^\d+$");
-            if(ageChecker.IsMatch(input))
+            Regex ageChecker = new Regex(@"^\d$");
+            if (ageChecker.IsMatch(input))
             {
                 WriteLine("Thank you!");
             }

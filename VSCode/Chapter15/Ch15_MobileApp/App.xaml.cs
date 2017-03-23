@@ -1,58 +1,29 @@
-﻿using System.Collections.Generic;
-
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace Ch15_MobileApp
 {
 	public partial class App : Application
 	{
-		public static bool AzureNeedsSetup => AzureMobileAppUrl == "https://CONFIGURE-THIS-URL.azurewebsites.net";
-		public static string AzureMobileAppUrl = "http://localhost:5000";
-		public static IDictionary<string, string> LoginParameters => null;
-
 		public App()
 		{
 			InitializeComponent();
 
-			if (AzureNeedsSetup)
-				DependencyService.Register<MockDataStore>();
-			else
-				DependencyService.Register<CloudDataStore>();
-
-			SetMainPage();
+			MainPage = new NavigationPage(new CustomersList());
 		}
 
-		public static void SetMainPage()
+		protected override void OnStart()
 		{
-			if (!AzureNeedsSetup && !Settings.IsLoggedIn)
-			{
-				Current.MainPage = new NavigationPage(new LoginPage())
-				{
-					BarBackgroundColor = (Color)Current.Resources["Primary"],
-					BarTextColor = Color.White
-				};
-			}
-			else
-			{
-				GoToMainPage();
-			}
+			// Handle when your app starts
 		}
 
-		public static void GoToMainPage()
+		protected override void OnSleep()
 		{
-			Current.MainPage = new TabbedPage
-			{
-				Children = {
-					new NavigationPage(new ItemsPage())
-					{
-						Title = "Browse"
-					},
-					new NavigationPage(new AboutPage())
-					{
-						Title = "About"
-					},
-				}
-			};
+			// Handle when your app sleeps
+		}
+
+		protected override void OnResume()
+		{
+			// Handle when your app resumes
 		}
 	}
 }

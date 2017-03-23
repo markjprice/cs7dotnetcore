@@ -12,7 +12,7 @@ namespace Packt.CS7
         }
 
         // two properties defined using C# 6+ lambda expression syntax
-        public string Greeting => $"{Name} says 'Hello!'"; 
+        public string Greeting => $"{Name} says 'Hello!'";
 
         public int Age => (int)(System.DateTime.Today.Subtract(DateOfBirth).TotalDays / 365.25);
 
@@ -52,6 +52,5 @@ namespace Packt.CS7
                 Children[index] = value;
             }
         }
-
     }
 }

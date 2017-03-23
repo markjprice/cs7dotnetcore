@@ -1,0 +1,8 @@
+/Users/markjprice/Code/Chapter01/Ch01_WelcomeDotNetCore/bin/Debug/netcoreapp1.1/Ch01_WelcomeDotNetCore.deps.json
+/Users/markjprice/Code/Chapter01/Ch01_WelcomeDotNetCore/bin/Debug/netcoreapp1.1/Ch01_WelcomeDotNetCore.runtimeconfig.json
+/Users/markjprice/Code/Chapter01/Ch01_WelcomeDotNetCore/bin/Debug/netcoreapp1.1/Ch01_WelcomeDotNetCore.runtimeconfig.dev.json
+/Users/markjprice/Code/Chapter01/Ch01_WelcomeDotNetCore/bin/Debug/netcoreapp1.1/Ch01_WelcomeDotNetCore.dll
+/Users/markjprice/Code/Chapter01/Ch01_WelcomeDotNetCore/bin/Debug/netcoreapp1.1/Ch01_WelcomeDotNetCore.pdb
+/Users/markjprice/Code/Chapter01/Ch01_WelcomeDotNetCore/obj/Debug/netcoreapp1.1/Ch01_WelcomeDotNetCore.AssemblyInfo.cs
+/Users/markjprice/Code/Chapter01/Ch01_WelcomeDotNetCore/obj/Debug/netcoreapp1.1/Ch01_WelcomeDotNetCore.dll
+/Users/markjprice/Code/Chapter01/Ch01_WelcomeDotNetCore/obj/Debug/netcoreapp1.1/Ch01_WelcomeDotNetCore.pdb

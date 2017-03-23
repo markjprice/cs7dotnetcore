@@ -1,0 +1,8 @@
+/Users/markjprice/Code/Chapter10/Ch10_Encoding/bin/Debug/netcoreapp1.1/Ch10_Encoding.deps.json
+/Users/markjprice/Code/Chapter10/Ch10_Encoding/bin/Debug/netcoreapp1.1/Ch10_Encoding.runtimeconfig.json
+/Users/markjprice/Code/Chapter10/Ch10_Encoding/bin/Debug/netcoreapp1.1/Ch10_Encoding.runtimeconfig.dev.json
+/Users/markjprice/Code/Chapter10/Ch10_Encoding/bin/Debug/netcoreapp1.1/Ch10_Encoding.dll
+/Users/markjprice/Code/Chapter10/Ch10_Encoding/bin/Debug/netcoreapp1.1/Ch10_Encoding.pdb
+/Users/markjprice/Code/Chapter10/Ch10_Encoding/obj/Debug/netcoreapp1.1/Ch10_Encoding.AssemblyInfo.cs
+/Users/markjprice/Code/Chapter10/Ch10_Encoding/obj/Debug/netcoreapp1.1/Ch10_Encoding.dll
+/Users/markjprice/Code/Chapter10/Ch10_Encoding/obj/Debug/netcoreapp1.1/Ch10_Encoding.pdb

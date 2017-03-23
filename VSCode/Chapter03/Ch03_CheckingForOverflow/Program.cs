@@ -1,11 +1,11 @@
 ﻿using System;
 using static System.Console;
 
-namespace ConsoleApplication
+namespace Ch03_CheckingForOverflow
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
             try
             {
@@ -21,7 +21,6 @@ namespace ConsoleApplication
                     x++;
                     WriteLine(x);
                 }
-
             }
             catch (OverflowException)
             {
@@ -30,18 +29,13 @@ namespace ConsoleApplication
 
             unchecked
             {
-
                 int y = int.MaxValue + 1;
-
                 WriteLine(y); // this will output -2147483648
                 y--;
                 WriteLine(y); // this will output 2147483647
                 y--;
                 WriteLine(y); // this will output 2147483646
             }
-            
-            int z;
-
         }
     }
 }

@@ -2,39 +2,39 @@
 using static System.Console;
 using Packt.CS7;
 
-namespace ConsoleApplication
+namespace Ch11_SigningApp
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-            Write("Enter some text to sign: ");
-            string data = ReadLine();
-            var signature = Protector.GenerateSignature(data);
-            WriteLine($"Signature: {signature}");
-            WriteLine("Public key used to check signature:");
-            WriteLine(Protector.PublicKey);
+Write("Enter some text to sign: ");
+string data = ReadLine();
+var signature = Protector.GenerateSignature(data);
+WriteLine($"Signature: {signature}");
+WriteLine("Public key used to check signature:");
+WriteLine(Protector.PublicKey);
 
-            if (Protector.ValidateSignature(data, signature))
-            {
-                WriteLine("Correct! Signature is valid.");
-            }
-            else
-            {
-                WriteLine("Invalid signature.");
-            }
+if (Protector.ValidateSignature(data, signature))
+{
+  WriteLine("Correct! Signature is valid.");
+}
+else
+{
+  WriteLine("Invalid signature.");
+}
 
-            // create a fake signature by replacing the 
-            // first character with an X
-            var fakeSignature = signature.Replace(signature[0], 'X');
-            if (Protector.ValidateSignature(data, fakeSignature))
-            {
-            WriteLine("Correct! Signature is valid.");
-            }
-            else
-            {
-            WriteLine($"Invalid signature: {fakeSignature}");
-            }
+// create a fake signature by replacing the 
+// first character with an X
+var fakeSignature = signature.Replace(signature[0], 'X');
+if (Protector.ValidateSignature(data, fakeSignature))
+{
+  WriteLine("Correct! Signature is valid.");
+}
+else
+{
+  WriteLine($"Invalid signature: {fakeSignature}");
+}
         }
     }
 }
