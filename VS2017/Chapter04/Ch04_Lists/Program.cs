@@ -1,33 +1,37 @@
-﻿using static System.Console;
+﻿using System;
 using System.Collections.Generic;
+using static System.Console;
 
-class Program
+namespace Ch04_Lists
 {
-    static void Main(string[] args)
+    class Program
     {
-        var cities = new List<string>();
-        cities.Add("London");
-        cities.Add("Paris");
-        cities.Add("Milan");
-        WriteLine("Initial list");
-        foreach (string city in cities)
+        static void Main(string[] args)
         {
-            WriteLine($"  {city}");
-        }
-        WriteLine($"The first city is {cities[0]}.");
-        WriteLine($"The last city is {cities[cities.Count - 1]}.");
-        cities.Insert(0, "Sydney");
-        WriteLine("After inserting Sydney at index 0");
-        foreach (string city in cities)
-        {
-            WriteLine($"  {city}");
-        }
-        cities.RemoveAt(1);
-        cities.Remove("Milan");
-        WriteLine("After removing two cities");
-        foreach (string city in cities)
-        {
-            WriteLine($"  {city}");
+            var cities = new List<string>();
+            cities.Add("London");
+            cities.Add("Paris");
+            cities.Add("Milan");
+            WriteLine("Initial list");
+            foreach (string city in cities)
+            {
+                WriteLine($"  {city}");
+            }
+            WriteLine($"The first city is {cities[0]}.");
+            WriteLine($"The last city is {cities[cities.Count - 1]}.");
+            cities.Insert(0, "Sydney");
+            WriteLine("After inserting Sydney at index 0");
+            foreach (string city in cities)
+            {
+                WriteLine($"  {city}");
+            }
+            cities.RemoveAt(1);
+            cities.Remove("Milan");
+            WriteLine("After removing two cities");
+            foreach (string city in cities)
+            {
+                WriteLine($"  {city}");
+            }
         }
     }
 }

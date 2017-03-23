@@ -1,20 +1,24 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using static System.Console;
 
-class Program
+namespace Ch04_RegularExpressions
 {
-    static void Main(string[] args)
+    class Program
     {
-        Write("Enter your age: ");
-        string input = ReadLine();
-        Regex ageChecker = new Regex(@"^\d+$");
-        if (ageChecker.IsMatch(input))
+        static void Main(string[] args)
         {
-            WriteLine("Thank you!");
-        }
-        else
-        {
-            WriteLine($"This is not a valid age: {input}");
+            Write("Enter your age: ");
+            string input = ReadLine();
+            Regex ageChecker = new Regex(@"^\d$");
+            if (ageChecker.IsMatch(input))
+            {
+                WriteLine("Thank you!");
+            }
+            else
+            {
+                WriteLine($"This is not a valid age: {input}");
+            }
         }
     }
 }

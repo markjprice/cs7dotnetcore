@@ -10,27 +10,27 @@ namespace Packt.CS7
         public DbSet<Product> Products { get; set; }
 
         protected override void OnConfiguring(
-            DbContextOptionsBuilder optionsBuilder)
+          DbContextOptionsBuilder optionsBuilder)
         {
             // for Microsoft SQL Server
             optionsBuilder.UseSqlServer(
-                @"Data Source=(localdb)\mssqllocaldb;" +
-                "Initial Catalog=Northwind;" +
-                "Integrated Security=true;");
+            @"Data Source=(localdb)\mssqllocaldb;" +
+            "Initial Catalog=Northwind;" +
+            "Integrated Security=true;");
 
             // for SQLite
             //optionsBuilder.UseSqlite(
-            //    "Filename=../../../../Northwind.db");
+            //  "Filename=../../../../Northwind.db");
         }
 
         protected override void OnModelCreating(
-            ModelBuilder modelBuilder)
+          ModelBuilder modelBuilder)
         {
             // example of using Fluent API instead of attributes
             modelBuilder.Entity<Category>()
-                .Property(category => category.CategoryName)
-                .IsRequired()
-                .HasMaxLength(40);
+            .Property(category => category.CategoryName)
+            .IsRequired()
+            .HasMaxLength(40);
         }
     }
 }

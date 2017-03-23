@@ -13,9 +13,6 @@ namespace Packt.CS7
         public WondersOfTheAncientWorld BucketList;
         public List<Person> Children = new List<Person>();
 
-        // constants
-        public const string Species = "Homo Sapien";
-
         // read-only fields
         public readonly string HomePlanet = "Earth";
         public readonly DateTime Instantiated;
@@ -35,6 +32,9 @@ namespace Packt.CS7
             Instantiated = DateTime.Now;
         }
 
+        // constants
+        public const string Species = "Homo Sapien";
+
         // methods
         public void WriteToConsole()
         {
@@ -44,6 +44,23 @@ namespace Packt.CS7
         public string GetOrigin()
         {
             return $"{Name} was born on {HomePlanet}";
+        }
+
+        // the old C# 4 syntax and .NET 4.0 System.Tuple type
+        public Tuple<string, int> GetFruitCS4()
+        {
+            return Tuple.Create("Apples", 5);
+        }
+
+        // the new C# 7 syntax and new System.ValueTuple type
+        public (string, int) GetFruitCS7()
+        {
+            return ("Apples", 5);
+        }
+
+        public (string Name, int Number) GetNamedFruit()
+        {
+            return (Name: "apples", Number: 5);
         }
 
         public string SayHello()
@@ -56,25 +73,8 @@ namespace Packt.CS7
             return $"{Name} says 'Hello {name}!'";
         }
 
-        // the old .NET 4.0 System.Tuple type
-        public Tuple<string, int> GetFruit4()
-        {
-            return Tuple.Create("Apples", 5);
-        }
-
-        // the new C# 7 syntax and new System.ValueTuple type
-        public (string, int) GetFruit7()
-        {
-            return ("Apples", 5);
-        }
-
-        // System.Runtime.CompilerServices.TupleValueNamesElement missing!
-        //public (string Name, int Number) GetNamedFruit7()
-        //{
-        //    return (Name: "apples", Number: 5);
-        //}
-
-        public void OptionalParameters(string command = "Run!", double number = 0.0, bool active = true)
+        public void OptionalParameters(string command = "Run!",
+            double number = 0.0, bool active = true)
         {
             WriteLine($"command is {command}, number is {number}, active is {active}");
         }
@@ -90,5 +90,6 @@ namespace Packt.CS7
             y++;
             z++;
         }
+
     }
 }

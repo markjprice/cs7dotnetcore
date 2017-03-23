@@ -26,10 +26,5 @@ namespace Ch13_UWP
         {
             this.InitializeComponent();
         }
-
-        private void clickMeButton_Click(object sender, RoutedEventArgs e)
-        {
-            clickMeButton.Content = DateTime.Now.ToString("hh:mm:ss");
-        }
     }
 }

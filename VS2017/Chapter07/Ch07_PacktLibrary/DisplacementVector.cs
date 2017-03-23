@@ -9,7 +9,9 @@
             X = initialX;
             Y = initialY;
         }
-        public static DisplacementVector operator +(DisplacementVector vector1, DisplacementVector vector2)
+
+        public static DisplacementVector operator +(
+            DisplacementVector vector1, DisplacementVector vector2)
         {
             return new DisplacementVector(vector1.X + vector2.X, vector1.Y + vector2.Y);
         }

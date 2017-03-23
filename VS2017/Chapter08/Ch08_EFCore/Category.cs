@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Packt.CS7
@@ -13,7 +12,7 @@ namespace Packt.CS7
         public string Description { get; set; }
 
         // defines a navigation property for related rows
-        public ICollection<Product> Products { get; set; }
+        public virtual ICollection<Product> Products { get; set; }
 
         public Category()
         {

@@ -4,7 +4,7 @@ using static System.Console;
 
 namespace Packt.CS7
 {
-    public class Person : IComparable<Person>
+    public partial class Person : IComparable<Person>
     {
         // fields
         public string Name;
@@ -14,7 +14,8 @@ namespace Packt.CS7
         // methods
         public void WriteToConsole()
         {
-            Console.WriteLine($"{Name} was born on {DateOfBirth:dddd, d MMMM yyyy}");
+            WriteLine(
+              $"{Name} was born on {DateOfBirth:dddd, d MMMM yyyy}");
         }
 
         // method to "multiply"
@@ -35,6 +36,24 @@ namespace Packt.CS7
             return p1.Procreate(p2);
         }
 
+        // method with a local function
+        public int Factorial(int number)
+        {
+            if (number < 0)
+            {
+                throw new ArgumentException(
+                  $"{nameof(number)} cannot be less than zero.");
+            }
+
+            int localFactorial(int localNumber)
+            {
+                if (localNumber < 1) return 1;
+                return localNumber * localFactorial(localNumber - 1);
+            }
+
+            return localFactorial(number);
+        }
+
         // event
         public event EventHandler Shout;
 
@@ -48,26 +67,12 @@ namespace Packt.CS7
             if (AngerLevel >= 3)
             {
                 // if something is listening...
-                // ...then raise the event
-                Shout?.Invoke(this, EventArgs.Empty);
+                if (Shout != null)
+                {
+                    // ...then raise the event
+                    Shout(this, EventArgs.Empty);
+                }
             }
-        }
-
-        // method with a local function
-        public int Factorial(int number)
-        {
-            if (number < 0)
-            {
-                throw new ArgumentException($"{nameof(number)} cannot be less than zero.");
-            }
-
-            int localFactorial(int localNumber)
-            {
-                if (localNumber < 1) return 1;
-                return localNumber * localFactorial(localNumber - 1);
-            }
-
-            return localFactorial(number);
         }
 
         public int CompareTo(Person other)
@@ -92,5 +97,6 @@ namespace Packt.CS7
                 WriteLine($"Welcome to {when:yyyy}!");
             }
         }
+
     }
 }

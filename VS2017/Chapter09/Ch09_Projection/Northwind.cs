@@ -8,7 +8,7 @@ namespace Packt.CS7
         public DbSet<Product> Products { get; set; }
 
         protected override void OnConfiguring(
-            DbContextOptionsBuilder optionsBuilder)
+          DbContextOptionsBuilder optionsBuilder)
         {
             // for Microsoft SQL Server
             optionsBuilder.UseSqlServer(
@@ -18,7 +18,7 @@ namespace Packt.CS7
 
             // for SQLite
             //optionsBuilder.UseSqlite(
-            //    "Filename=../../../../Northwind.db");
+            //"Filename=../../../../Northwind.db");
         }
     }
 }

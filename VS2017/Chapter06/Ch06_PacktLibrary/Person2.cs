@@ -52,6 +52,5 @@
                 Children[index] = value;
             }
         }
-
     }
 }

@@ -17,6 +17,6 @@ namespace Packt.CS7
         // these two define the foreign key relationship
         // to the Categories table
         public int CategoryID { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
     }
 }

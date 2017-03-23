@@ -1,28 +1,38 @@
-﻿using static System.Console;
+﻿using System;
+using static System.Console;
 
-class Program
+namespace Ch03_IterationStatements
 {
-    static void Main(string[] args)
+    class Program
     {
-        //int x = 0;
-        //while (x < 10)
-        //{
-        //    WriteLine(x);
-        //    x++;
-        //}
-
-        int x = 0;
-        do
+        static void Main(string[] args)
         {
-            WriteLine(x);
-            x++;
-        } while (x < 10);
+            int x = 0;
+            while (x < 10)
+            {
+                WriteLine(x);
+                x++;
+            }
 
-        string[] names = { "Adam", "Barry", "Charlie" };
-        foreach (string name in names)
-        {
-            WriteLine($"{name} has {name.Length} characters.");
+            string password = string.Empty;
+            do
+            {
+                Write("Enter your password: ");
+                password = ReadLine();
+            } while (password != "secret");
+            WriteLine("Correct!");
+
+            for (int y = 1; y <= 10; y++)
+            {
+                WriteLine(y);
+            }
+
+            string[] names = { "Adam", "Barry", "Charlie" };
+            foreach (string name in names)
+            {
+                WriteLine($"{name} has {name.Length} characters.");
+            }
+
         }
-
     }
 }
