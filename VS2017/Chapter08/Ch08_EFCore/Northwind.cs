@@ -16,6 +16,7 @@ namespace Packt.CS7
             optionsBuilder.UseSqlServer(
             @"Data Source=(localdb)\mssqllocaldb;" +
             "Initial Catalog=Northwind;" +
+            "MultipleActiveResultSets=true;" +
             "Integrated Security=true;");
 
             // for SQLite
